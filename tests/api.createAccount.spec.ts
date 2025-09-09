@@ -1,6 +1,7 @@
 import { test, expect, request } from '@playwright/test';
 import { buildUser } from '../src/utils/data';
 import { createAccount } from '../src/utils/apiClient';
+import data from "../src/data/user_credentials.json";
 
 async function messageOf(res: any) {
   const body = await res.json().catch(async () => (await res.text()));
@@ -10,7 +11,7 @@ async function messageOf(res: any) {
 test.describe('Task 2: API Automation - createAccount', () => {
   test('register a new user (200/201) then duplicate (400 or 200 with message)', async () => {
     const api = await request.newContext();
-    const user = buildUser();
+    const user = buildUser({email:data.email, password:data.password});
 
     // Create new user
     const res1 = await createAccount(api, user);
