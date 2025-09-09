@@ -1,0 +1,23 @@
+{
+  "name": "qa-assessment-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kinetik QA Engineer (Level 3) Assessment Task solution using Playwright (TypeScript).",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "e2e": "playwright test tests/e2e.purchase.spec.ts",
+    "api": "playwright test tests/api.createAccount.spec.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^22.18.1",
+    "eslint": "^9.9.1",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}

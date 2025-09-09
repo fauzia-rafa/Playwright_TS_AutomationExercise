@@ -1,0 +1,14 @@
+
+node_modules
+dist
+test-results
+playwright-report
+playwright/.cache
+downloads
+*.log
+.env
+
+# Playwright
+/playwright-report/
+/blob-report/
+/playwright/.cache/
