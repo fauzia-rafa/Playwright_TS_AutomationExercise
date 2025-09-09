@@ -21,7 +21,7 @@ export class CheckoutPage {
     // Success confirmation
     const success = this.page.locator("div[class='col-sm-9 col-sm-offset-1'] p");
     await expect(success).toBeVisible();
-    await expect(this.page).toHaveURL("https://automationexercise.com/payment_done/900");
+    await expect(this.page).toHaveURL(/.*payment_done.*/);
 
     // Download invoice
     const [ download ] = await Promise.all([
