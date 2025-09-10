@@ -9,7 +9,6 @@ function toForm(obj: Record<string, unknown>): Record<string, FormPrimitive> {
   const out: Record<string, FormPrimitive> = {};
   for (const [k, v] of Object.entries(obj)) {
     if (v !== undefined && v !== null) {
-      // Coerce to allowed primitives (all your fields are strings anyway)
       if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
         out[k] = v;
       } else {
@@ -23,8 +22,8 @@ function toForm(obj: Record<string, unknown>): Record<string, FormPrimitive> {
 export async function createAccount(request: APIRequestContext, user: User) {
   const form = toForm({
     name: user.name,
-    email: data.email,
-    password: data.password,
+    email: user.email,
+    password: user.password,
     title: user.title,
     birth_date: user.birth_date,
     birth_month: user.birth_month,

@@ -19,13 +19,13 @@ export type User = {
   mobile_number?: string;
 };
 
-// export function uniqueEmail(prefix = 'fauzia_sqa'): string {
-//   const ts = new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0,14);
-//   return `${prefix}+${ts}@example.com`;
-// }
+export function uniqueEmail(prefix = 'fauzia_sqa'): string {
+  const ts = new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0,14);
+  return `${prefix}+${ts}@example.com`;
+}
 
 export function buildUser(overrides: Partial<User> = {}): User {
-  const email = overrides.email ?? 'fauzia_test@example.com';
+  const email = overrides.email ?? uniqueEmail();
   const password = overrides.password ?? 'P@ssw0rd!23';
   return {
     name: overrides.name ?? 'QA Candidate',

@@ -37,7 +37,6 @@ npm run test:headed
 ```
 
 ### Notes
-- Change the email address from `src/data/user_credentials.json` everytime before running the test.
 - Invoice downloads to `downloads/invoices/` and is validated for existence and non‑zero size.
 - Reports:
   - HTML report: `playwright-report/`
