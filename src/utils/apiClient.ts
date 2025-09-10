@@ -19,6 +19,7 @@ function toForm(obj: Record<string, unknown>): Record<string, FormPrimitive> {
   return out;
 }
 
+
 export async function createAccount(request: APIRequestContext, user: User) {
   const form = toForm({
     name: user.name,
